@@ -5,674 +5,167 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Свадебное приглашение</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Marck+Script&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Montserrat',sans-serif;
-background:#fff;
-overflow-x:hidden;
-}
-
-/* HERO */
-
-.hero{
-
-min-height:100vh;
-
-background:
-linear-gradient(rgba(110,58,52,0.85),rgba(110,58,52,0.9)),
-url("./images/bg.jpg");
-
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-
-text-align:center;
-color:white;
-padding:40px 20px;
-}
-
-/* animations */
-
-.fade{
-opacity:0;
-transform:translateY(30px);
-transition:all 1.2s ease;
-}
-
-.fade.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* text */
-
-.top-text{
-letter-spacing:4px;
-font-size:14px;
-margin-bottom:10px;
-align-self:center;
-margin-left:-10%;
-}
-
-.initials{
-width:100%;
-display:flex;
-justify-content:center;
-margin:20px 0 10px 0;
-}
-
-.initials img{
-width:clamp(220px,35vw,520px);
-height:auto;
-display:block;
-}
-
-.line{
-width:80px;
-height:2px;
-background:white;
-margin:30px auto;
-opacity:0.8;
-}
-
-.names{
-font-size:clamp(20px,2.5vw,28px);
-letter-spacing:3px;
-margin-bottom:12px;
-}
-
-.invite{
-font-size:14px;
-letter-spacing:4px;
-margin-bottom:30px;
-}
-
-.date{
-font-size:clamp(16px,2vw,20px);
-line-height:1.6;
-margin-bottom:40px;
-}
-
-.place{
-font-size:14px;
-letter-spacing:3px;
-line-height:1.6;
-opacity:0.9;
-}
-
-/* COUNTDOWN */
-
-.countdown{
-
-background:#efefef;
-color:#6e3a34;
-
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-
-gap:30px;
-
-padding:30px 10px;
-
-}
-
-.count-item{
-text-align:center;
-min-width:70px;
-}
-
-.count-number{
-font-size:26px;
-font-weight:400;
-}.info{
-padding:80px 20px;
-background:#fff;
-color:#6e3a34;
-}
-
-.info-container{
-max-width:600px;
-margin:0 auto;
-
-display:flex;
-flex-direction:column; /* ключевое */
-gap:30px;
-}
-
-.info-block{
-text-align:center;
-padding-bottom:20px;
-border-bottom:1px solid #eee;
-}
-
-.info-block:last-child{
-border-bottom:none;
-}
-
-.info-block h3{
-font-size:14px;
-letter-spacing:3px;
-margin-bottom:15px;
-}
-
-.info-block p{
-font-size:14px;
-line-height:1.7;
-}
-
-/* адаптив */
-
-@media (max-width:600px){
-.info{
-padding:60px 20px;
-}
-}
-
-.count-label{
-font-size:12px;
-letter-spacing:2px;
-margin-top:6px;
-}
-
-/* mobile */
-
-@media (max-width:600px){
-
-.initials{
-font-size:120px;
-}
-
-.countdown{
-gap:20px;
-}
-
-.count-number{
-font-size:24px;
-}
-
-}
-
-
-.section-title{
-text-align:center;
-font-size:18px;
-letter-spacing:4px;
-margin-bottom:40px;
-color:#6e3a34;
-}
-
-/* TIMELINE */
-
-.timeline{
-padding:80px 20px;
-background:#f8f8f8;
-}
-
-.timeline-container{
-max-width:600px;
-margin:0 auto;
-}
-
-.timeline-item{
-display:flex;
-justify-content:space-between;
-border-bottom:1px solid #ddd;
-padding:15px 0;
-font-size:14px;
-}
-
-.timeline-item span{
-font-weight:500;
-}
-
-/* DRESSCODE */
-
-.dresscode{
-padding:80px 20px;
-text-align:center;
-}
-
-.colors{
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-margin-bottom:20px;
-}
-
-.color{
-width:50px;
-height:50px;
-border-radius:50%;
-}
-
-.dress-text{
-font-size:14px;
-color:#6e3a34;
-}
-
-/* RSVP */
-
-.rsvp{
-padding:80px 20px;
-background:#6e3a34;
-color:white;
-text-align:center;
-}
-
-.rsvp-form{
-max-width:400px;
-margin:0 auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.rsvp input,
-.rsvp select,
-.rsvp textarea{
-padding:12px;
-border:none;
-border-radius:6px;
-font-family:inherit;
-}
-
-.rsvp textarea{
-resize:none;
-height:100px;
-}
-
-.rsvp button{
-padding:12px;
-border:none;
-background:white;
-color:#6e3a34;
-font-weight:500;
-cursor:pointer;
-transition:0.3s;
-}
-
-.rsvp button:hover{
-opacity:0.8;
-}
-
-/* mobile */
-
-@media (max-width:600px){
-
-.timeline-item{
-font-size:13px;
-}
-
-.color{
-width:40px;
-height:40px;
-}
-
-}
-
-.timeline-item{
-display:flex;
-align-items:flex-start;
-justify-content:space-between;
-
-border-bottom:1px solid #ddd;
-padding:18px 0;
-}
-
-/* время */
-.timeline-item span{
-min-width:60px;
-font-weight:500;
-color:#6e3a34;
-}
-
-/* блок текста */
-.timeline-text{
-text-align:right;   /* ключевое */
-max-width:70%;
-}
-
-/* заголовок */
-.timeline-text .title{
-font-size:14px;
-margin-bottom:4px;
-}
-
-/* описание */
-.timeline-text .desc{
-font-size:13px;
-color:#a08a86;
-}
-
-.intro{
-padding:80px 20px;
-background:#fff;
-}
-
-.intro-container{
-max-width:600px;
-margin:0 auto;
-
-flex-direction:column; /* ключевое */
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-/* фото */
-
-.intro-image img{
-width:100%;
-height:auto;
-border-radius:12px;
-object-fit:cover;
-}
-
-/* текст */
-
-.intro-text{
-color:#6e3a34;
-font-size:15px;
-line-height:1.8;
-text-align:center;
-}
-
-.greeting{
-font-size:28px;
-margin-bottom:20px;
-letter-spacing:2px;
-text-align:center;
-}
-
-/* mobile */
-
-@media (max-width:768px){
-
-.intro-container{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.greeting{
-font-size:24px;
-}
-
-}
-
-</style>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Marck+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 
 <section class="hero">
-
-<div class="top-text fade">ОНА СКАЗАЛА</div>
-
-<div class="initials fade">
-    <img src="./images/da.png" alt="да">
-</div>
-
-<div class="line fade"></div>
-
-<div class="names fade">Рамиль & Камила</div>
-
-<div class="invite fade">ПРИГЛАШАЕМ НА СВАДЬБУ</div>
-
-<div class="date fade">
-20 июня 2026 года<br>
-суббота, 11:00
-</div>
-
-<div class="place fade">
-Трактир "Рощинский"<br>
-Р-240, 111-й километр
-</div>
-
+    <div class="top-text fade">ОНА СКАЗАЛА</div>
+    <div class="initials fade">
+        <img src="./images/da.png" alt="да">
+    </div>
+    <div class="line fade"></div>
+    <div class="names fade">Рамиль & Камила</div>
+    <div class="invite fade">ПРИГЛАШАЕМ НА СВАДЬБУ</div>
+    <div class="date fade">
+    20 июня 2026 года<br>
+    суббота, 11:00
+    </div>
+    <div class="place fade">
+    Трактир "Рощинский"<br>
+    Р-240, 111-й километр
+    </div>
 </section>
 
 
 <section class="countdown">
-
-<div class="count-item">
-<div class="count-number" id="days"></div>
-<div class="count-label">ДНЕЙ</div>
-</div>
-
-<div class="count-item">
-<div class="count-number" id="hours"></div>
-<div class="count-label">ЧАСОВ</div>
-</div>
-
-<div class="count-item">
-<div class="count-number" id="minutes"></div>
-<div class="count-label">МИНУТ</div>
-</div>
-
-<div class="count-item">
-<div class="count-number" id="seconds"></div>
-<div class="count-label">СЕКУНД</div>
-</div>
-
+    <div class="count-item">
+        <div class="count-number" id="days"></div>
+        <div class="count-label">ДНЕЙ</div>
+    </div>
+    <div class="count-item">
+        <div class="count-number" id="hours"></div>
+        <div class="count-label">ЧАСОВ</div>
+    </div>
+    <div class="count-item">
+        <div class="count-number" id="minutes"></div>
+        <div class="count-label">МИНУТ</div>
+    </div>
+    <div class="count-item">
+        <div class="count-number" id="seconds"></div>
+        <div class="count-label">СЕКУНД</div>
+    </div>
 </section>
 
 <section class="intro">
-
-<div class="intro-container">
-
-<div class="intro-text fade">
-<p class="greeting">Дорогой<br>Гость!</p>
-
-<p>
-Мы рады сообщить Вам, что 20.06.2026 состоится самое главное торжество в нашей жизни — день нашей свадьбы!
-</p>
-
-<p>
-Приглашаем Вас разделить с нами радость этого незабываемого дня.
-</p>
-<br>
-</div>
-
-<div class="intro-image fade">
-<img src="./images/photo.jpg" alt="Наша пара">
-</div>
-
-</div>
-
+    <div class="intro-container">
+        <div class="intro-text fade">
+            <p class="greeting">Дорогой<br>Гость!</p>
+            <p>
+            Мы рады сообщить Вам, что 20.06.2026 состоится самое главное торжество в нашей жизни — день нашей свадьбы!
+            </p>
+            <p>
+            Приглашаем Вас разделить с нами радость этого незабываемого дня.
+            </p>
+            <br>
+        </div>
+        <div class="intro-image fade">
+         <img src="./images/photo.jpg" alt="Наша пара">
+        </div>
+    </div>
 </section>
 
 <section class="info">
-
-<div class="info-container">
-
-<div class="info-block fade">
-<h3>ПОЖЕЛАНИЯ ПО ПОДАРКАМ</h3>
-<p>
-Ваше присутствие в день нашей свадьбы - самый значимый подарок для нас!<br><br>
-Мы понимаем, что дарить цветы на свадьбу - это традиция, но мы не сможем насладиться их красотой в полной мере... 
-Не ломайте голову над подарком. Ваши конверты помогут нам осуществить нашу мечту!
-<br>
-<br>
-Если Вы подготовили творческий подарок или сюрприз, пожалуйста предупредите нашего координатора.
-
-</p>
-</div>
-
-
-<div class="info-block fade">
-<h3>ПРИМЕЧАНИЕ</h3>
-<p>
-Будем благодарны, если вы воздержитесь от криков "Горько" на празднике, ведь поцелуй — это знак выражения чувств, 
-он не может быть по заказу.<br>
-(За деньги — да)
-</p>
-</div>
-
-<div class="info-block fade">
-<h3>ПОДТВЕРЖДЕНИЕ </h3>
-<p>
-Пожалуйста, подтвердите свое присутствие до 20.05.2026 
-</p>
-</div>
-
-</div>
-
+    <div class="info-container">
+        <div class="info-block fade">
+        <h3>ПОЖЕЛАНИЯ ПО ПОДАРКАМ</h3>
+        <p>
+        Ваше присутствие в день нашей свадьбы - самый значимый подарок для нас!<br><br>
+        Мы понимаем, что дарить цветы на свадьбу - это традиция, но мы не сможем насладиться их красотой в полной мере...
+        Не ломайте голову над подарком. Ваши конверты помогут нам осуществить нашу мечту!
+        <br>
+        <br>
+        Если Вы подготовили творческий подарок или сюрприз, пожалуйста предупредите нашего координатора.
+        </p>
+        </div>
+        <div class="info-block fade">
+            <h3>ПРИМЕЧАНИЕ</h3>
+            <p>
+            Будем благодарны, если вы воздержитесь от криков "Горько" на празднике, ведь поцелуй — это знак выражения чувств,
+            он не может быть по заказу.<br>
+            (За деньги — да)
+            </p>
+        </div>
+        <div class="info-block fade">
+            <h3>ПОДТВЕРЖДЕНИЕ </h3>
+            <p>
+            Пожалуйста, подтвердите свое присутствие до 20.05.2026
+            </p>
+        </div>
+    </div>
 </section>
 
 <!-- TIMELINE -->
 
 <section class="timeline">
-
-<h2 class="section-title fade">ТАЙМИНГ ДНЯ</h2>
-
-<div class="timeline-container">
-
-<div class="timeline-item fade">
-  <span>14:00</span>
-  <div class="timeline-text">
-    <p class="title">Сбор гостей в городе Ишимбай</p>
-    <p class="desc">Ишимбайский дворец культуры</p>
-  </div>
-</div>
-
-<div class="timeline-item fade">
-  <span>15:30</span>
-  <div class="timeline-text">
-    <p class="title">Сбор гостей</p>
-    <p class="desc">Трактир "Рощинский"</p>
-  </div>
-</div>
-
-<div class="timeline-item fade">
-  <span>16:00</span>
-  <div class="timeline-text">
-    <p class="title">Свадебная церемония</p>
-    <p class="desc">На улице рядом с шатром</p>
-  </div>
-</div>
-
-<div class="timeline-item fade">
-  <span>17:00</span>
-  <div class="timeline-text">
-    <p class="title">Банкет</p>
-    <p class="desc">Трактир "Рощинский"</p>
-  </div>
-</div>
-
+    <h2 class="section-title fade">ТАЙМИНГ ДНЯ</h2>
+    <div class="timeline-container">
+    <div class="timeline-item fade">
+      <span>14:00</span>
+      <div class="timeline-text">
+        <p class="title">Сбор гостей в городе Ишимбай</p>
+        <p class="desc">Ишимбайский дворец культуры</p>
+      </div>
+    </div>
+    <div class="timeline-item fade">
+      <span>15:30</span>
+      <div class="timeline-text">
+        <p class="title">Сбор гостей</p>
+        <p class="desc">Трактир "Рощинский"</p>
+      </div>
+    </div>
+    <div class="timeline-item fade">
+      <span>16:00</span>
+      <div class="timeline-text">
+        <p class="title">Свадебная церемония</p>
+        <p class="desc">На улице рядом с шатром</p>
+      </div>
+    </div>
+    <div class="timeline-item fade">
+      <span>17:00</span>
+      <div class="timeline-text">
+        <p class="title">Банкет</p>
+        <p class="desc">Трактир "Рощинский"</p>
+      </div>
+    </div>
 </section>
 
 
 <!-- DRESS CODE COLORS -->
 
 <section class="dresscode">
-
-<h2 class="section-title fade">ПАЛИТРА ДРЕСС-КОДА</h2>
-
-<div class="colors">
-
-<div class="color" style="background:#677f33"></div>
-<div class="color" style="background:#593e32"></div>
-<div class="color" style="background:#7d5a49"></div>
-<div class="color" style="background:#bfa38a"></div>
-<div class="color" style="background:#f5e9d3"></div>
-
-</div>
-
-<p class="dress-text fade">
-Будем рады, если вы поддержите цветовую гамму нашей свадьбы
-</p>
-
+    <h2 class="section-title fade">ПАЛИТРА ДРЕСС-КОДА</h2>
+    <div class="colors">
+        <div class="color" style="background:#677f33"></div>
+        <div class="color" style="background:#593e32"></div>
+        <div class="color" style="background:#7d5a49"></div>
+        <div class="color" style="background:#bfa38a"></div>
+        <div class="color" style="background:#f5e9d3"></div>
+    </div>
+    <p class="dress-text fade">Будем рады, если вы поддержите цветовую гамму нашей свадьбы</p>
 </section>
-
 
 <!-- RSVP -->
 
 <section class="rsvp">
-
-<h2 class="section-title fade" style="color: white;">ПОДТВЕРЖДЕНИЕ ПРИСУТСТВИЯ</h2>
-
-<form class="rsvp-form fade">
-
-<input type="text" placeholder="Ваше имя" required>
-
-<select required>
-<option value="">Вы придёте?</option>
-<option>С радостью приду</option>
-<option>К сожалению, не смогу</option>
-</select>
-
-<textarea placeholder="Комментарий (по желанию)"></textarea>
-
-<button type="submit">Отправить</button>
-
-</form>
-
+    <h2 class="section-title fade" style="color: white;">ПОДТВЕРЖДЕНИЕ ПРИСУТСТВИЯ</h2>
+    <form class="rsvp-form fade">
+        <input type="text" placeholder="Ваше имя" required>
+        <select required>
+            <option value="">Вы придёте?</option>
+            <option>С радостью приду</option>
+            <option>К сожалению, не смогу</option>
+        </select>
+        <textarea placeholder="Комментарий (по желанию)"></textarea>
+        <button type="submit">Отправить</button>
+    </form>
 </section>
 
-
-<script>
-
-/* countdown */
-
-const weddingDate = new Date("June 20, 2026 11:00:00").getTime();
-
-function updateCountdown(){
-
-const now = new Date().getTime();
-const diff = weddingDate - now;
-
-const days = Math.floor((diff / (1000*60*60*24)));
-const hours = Math.floor((diff % (1000*60*60*24))/(1000*60*60));
-const minutes = Math.floor((diff % (1000*60*60))/(1000*60));
-const seconds = Math.floor((diff % (1000*60))/1000);
-
-document.getElementById("days").innerText = days;
-document.getElementById("hours").innerText = hours;
-document.getElementById("minutes").innerText = minutes;
-document.getElementById("seconds").innerText = seconds;
-
-}
-
-setInterval(updateCountdown,1000);
-
-
-/* fade animation */
-
-const elements = document.querySelectorAll(".fade");
-
-function reveal(){
-
-elements.forEach((el,i)=>{
-
-setTimeout(()=>{
-el.classList.add("show");
-}, i*300)
-
-})
-
-}
-
-window.onload = reveal;
-
-</script>
-
+<script src="js/script.js"></script>
 
 </body>
+
 </html>
