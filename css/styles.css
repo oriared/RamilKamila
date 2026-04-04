@@ -13,12 +13,11 @@ overflow-x:hidden;
 /* HERO */
 
 .hero{
-
 min-height:100vh;
 
 background:
-linear-gradient(rgba(110,58,52,0.85),rgba(110,58,52,0.9)),
-url("../images/bg.jpg");
+linear-gradient(135deg, rgba(94, 47, 42, 0.85), rgba(125, 90, 73, 0.75), rgba(191, 163, 138, 0.65)),
+url("../images/back.jpg");
 
 background-size:cover;
 background-position:center;
@@ -259,7 +258,7 @@ color:#6e3a34;
 
 .rsvp{
 padding:80px 20px;
-background:#6e3a34;
+background:#7d5a49;
 color:white;
 text-align:center;
 }
