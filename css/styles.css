@@ -35,7 +35,6 @@ url("../images/back.jpg");
 
 background-size:cover;
 background-position:center;
-background-attachment:fixed;
 
 display:flex;
 flex-direction:column;
@@ -45,6 +44,12 @@ align-items:center;
 text-align:center;
 color:white;
 padding:40px 20px;
+}
+
+@media (min-width: 769px){
+    .hero{
+        background-attachment: fixed;
+    }
 }
 
 /* animations */
